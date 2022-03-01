@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import PropTypes from 'prop-types'
 
 const styles = {
-  inputForm : {
+    inputForm : {
     padding: '1rem',
     marginBottom: '1rem'
   },
@@ -11,7 +11,6 @@ const styles = {
     width : '85%',
     border: '1px solid grey',
     borderRadius: '5px',
-    // marginRight : '5%',
     height: '25px'
   },
 
@@ -22,11 +21,7 @@ const styles = {
     borderRadius: '5px',
     marginLeft: '5%',
     color: 'white',
-
-
   }
-
-
 }
 
 
@@ -46,7 +41,13 @@ function AddTodo({ onCreate }){
 
   return (
     <form style = {styles.inputForm} onSubmit = {submitHandler} >
-      <input placeholder={'Go to therapy'} style = {styles.userInput} value = {value} onChange = {event => setValue(event.target.value)} />
+      <input 
+        placeholder={'Go to therapy'} 
+        style = {styles.userInput} 
+        value = {value} 
+        onChange = {event => setValue(event.target.value)} 
+      />
+
       <button style={styles.button} type='submit'>ADD</button>
     </form>
   )
