@@ -1,6 +1,34 @@
 import React, {useState} from "react";
 import PropTypes from 'prop-types'
 
+const styles = {
+  inputForm : {
+    padding: '1rem',
+    marginBottom: '1rem'
+  },
+
+  userInput : {
+    width : '85%',
+    border: '1px solid grey',
+    borderRadius: '5px',
+    // marginRight : '5%',
+    height: '25px'
+  },
+
+  button : {
+    height: '30px',
+    backgroundColor: 'lightgreen',
+    border: 'none',
+    borderRadius: '5px',
+    marginLeft: '5%',
+    color: 'white',
+
+
+  }
+
+
+}
+
 
 
 function AddTodo({ onCreate }){
@@ -17,9 +45,9 @@ function AddTodo({ onCreate }){
   }
 
   return (
-    <form style = {{marginBottom: '1rem'}} onSubmit = {submitHandler} >
-      <input value = {value} onChange = {event => setValue(event.target.value)} />
-      <button type='submit'>Add Todo</button>
+    <form style = {styles.inputForm} onSubmit = {submitHandler} >
+      <input placeholder={'Go to therapy'} style = {styles.userInput} value = {value} onChange = {event => setValue(event.target.value)} />
+      <button style={styles.button} type='submit'>ADD</button>
     </form>
   )
 }
